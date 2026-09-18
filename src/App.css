@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f4f8fb;
+  color: #1a1a1a;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #e0e7ef;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.tabs button.ativo {
+  background: #0d6efd;
+  color: white;
+}
+
+.formulario {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.formulario button,
+.acoes-backup button {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: #0d6efd;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sucesso {
+  color: #198754;
+  font-weight: 600;
+}
+
+.status-filtros table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.status-filtros th,
+.status-filtros td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 0.85rem;
+}
+
+.lista-historico {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lista-historico li {
+  background: white;
+  padding: 0.6rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.lista-historico button {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.acoes-backup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
