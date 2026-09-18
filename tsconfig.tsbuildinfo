@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/backup.tsx","./src/components/historico.tsx","./src/components/statusfiltros.tsx","./src/components/trocaaguaform.tsx","./src/components/trocafiltroform.tsx","./src/db/db.ts","./src/types/index.ts","./src/utils/export.ts"],"version":"5.9.3"}
