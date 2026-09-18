@@ -8,13 +8,19 @@ function diasDesde(dataISO: string): number {
   return Math.floor((d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
 }
 
-export default function StatusFiltros() {
-  const trocas = useLiveQuery(() => db.trocasFiltro.toArray(), []);
+export default function PainelEstado() {
+  const trocasAgua = useLiveQuery(
+    () => db.trocasAgua.orderBy('data').reverse().toArray(),
+    []
+  );
+  const trocasFiltro = useLiveQuery(() => db.trocasFiltro.toArray(), []);
 
-  if (!trocas) return null;
+  if (!trocasAgua || !trocasFiltro) return null;
+
+  const ultimaTrocaAgua = trocasAgua[0] ?? null;
 
   const ultimaPorFiltro = TIPOS_FILTRO.map((tipo) => {
-    const registosDoTipo = trocas
+    const registosDoTipo = trocasFiltro
       .filter((t) => t.filtro === tipo)
       .sort((a, b) => b.data.localeCompare(a.data));
     return { tipo, ultima: registosDoTipo[0] ?? null };
@@ -22,7 +28,15 @@ export default function StatusFiltros() {
 
   return (
     <section className="status-filtros">
-      <h2>Estado dos filtros</h2>
+      <h2>Estado do aquário</h2>
+
+      <div className="status-agua">
+        <strong>Última troca de água:</strong>{' '}
+        {ultimaTrocaAgua
+          ? `${ultimaTrocaAgua.data} (há ${diasDesde(ultimaTrocaAgua.data)} dias)`
+          : 'Nunca registada'}
+      </div>
+
       <table>
         <thead>
           <tr>

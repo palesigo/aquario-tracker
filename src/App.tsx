@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import TrocaAguaForm from './components/TrocaAguaForm';
 import TrocaFiltroForm from './components/TrocaFiltroForm';
-import StatusFiltros from './components/StatusFiltros';
+import PainelEstado from './components/PainelEstado';
 import Historico from './components/Historico';
 import Backup from './components/Backup';
 import './App.css';
@@ -17,7 +17,7 @@ export default function App() {
         <h1>🐠 Aquário Tracker</h1>
       </header>
 
-      <StatusFiltros />
+      <PainelEstado />
 
       <nav className="tabs">
         <button className={aba === 'agua' ? 'ativo' : ''} onClick={() => setAba('agua')}>
